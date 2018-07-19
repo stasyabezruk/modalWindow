@@ -1,0 +1,196 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    height: 100%;
+
+}
+h1, h2, h3 {
+    margin: 0;
+    font-weight: normal;
+    -webkit-transition: all .45s ease-in-out;
+    -moz-transition: all .45s ease-in-out;
+    -o-transition: all .45s ease-in-out;
+    transition: all .45s ease-in-out;
+}
+p {
+    margin: 0;
+
+}
+
+.frame-wrapper {
+    width: 1300px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    color: white;
+}
+
+.frame-main {
+    width: 70%;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    -webkit-justify-content: center;
+    padding-right: 3px;
+}
+.frame-main section {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 50px 0;
+}
+.frame-main h1,
+.frame-main p {
+    width: 300px;
+    text-align: right;
+    font-size: 24px;
+    line-height: 32px;
+    z-index: 2;
+}
+.frame-wrapper section {
+    cursor: pointer;
+    position: relative;
+}
+
+
+.frame-extra {
+    width: 30%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+.frame-extra section {
+    padding: 35px 0;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    text-align: center;
+}
+.frame-extra__computers {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom: 3px;
+}
+
+.frame-extra__work {
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.frame-extra h2, h3, p {
+    font-size: 14px;
+    line-height: 18px;
+    z-index: 2;
+}
+.frame-extra p {
+    width: 60%;
+}
+
+
+/*HOVER effect*/
+.frame-wrapper section:after {
+    content: "";
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 1;
+    -webkit-transition: all .45s ease-in-out;
+    -moz-transition: all .45s ease-in-out;
+    -o-transition: all .45s ease-in-out;
+    transition: all .45s ease-in-out;
+}
+.frame-wrapper section:hover:after {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.frame-wrapper section {
+    /*hover animation*/
+    -webkit-transition: all .45s ease-in-out;
+    -moz-transition: all .45s ease-in-out;
+    -o-transition: all .45s ease-in-out;
+    transition: all .45s ease-in-out;
+}
+
+.frame-wrapper section:hover {
+    background-size: 110%;
+}
+
+/*range 1023 and 768 px - ipad portrait*/
+@media screen and (max-width: 1023px) {
+    .frame-extra section {
+        padding: 20px 0;
+    }
+}
+
+/*mobile*/
+@media screen and (max-width: 735px) {
+    body {
+        height: auto;
+    }
+    .frame-wrapper {
+        width: 100%;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    .frame-main {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 3px;
+    }
+    .frame-main section {
+        padding: 50px 20px;
+    }
+    .frame-main h1,
+    .frame-main p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .frame-extra,
+    .frame-extra p {
+        width: 100%;
+    }
+    .frame-extra section {
+        padding: 35px 20px;
+    }
+}
+
+/* mobile - small devices (like iph5/ip4) */
+@media screen and (max-width: 340px) {
+    .frame-main h1,
+    .frame-main p {
+        font-size: 20px;
+        line-height: 26px;
+    }
+}

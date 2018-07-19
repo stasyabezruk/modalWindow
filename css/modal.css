@@ -1,0 +1,164 @@
+.noScroll {
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+}
+.modal * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.frame-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    visibility: hidden;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(0, 0, 0, .8);
+    opacity: 0;
+    cursor: pointer;
+    transition: transform .2s ease;
+    -webkit-transition: -webkit-transform .2s ease;
+}
+
+.frame-modal__visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.frame-modal__overflow {
+    overflow-y: scroll;
+    padding-top: 8vh;
+}
+
+.frame-modal__visible .frame-modal-box {
+    transform: scale(1);
+}
+
+.frame-modal__close {
+    position: fixed;
+    top: 10px;
+    right: 28px;
+    z-index: 1000;
+    padding: 0;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    background-color: transparent;
+    color: #f0f0f0;
+    font-size: 6rem;
+    font-family: monospace;
+    line-height: 1;
+    cursor: pointer;
+    transition: color .3s ease;
+}
+
+.frame-modal__closeLabel {
+    display: none;
+}
+
+.frame-modal__close:hover {
+    color: #fff;
+}
+
+.frame-modal__close:hover {
+    color: #fff;
+}
+
+.frame-modal-box {
+    position: relative;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 60%;
+    max-width: 700px;
+    border-radius: 4px;
+    background: #fff;
+    opacity: 1;
+    cursor: auto;
+    transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
+    transform: scale(.8);
+}
+
+.frame-modal__content {
+    padding: 10px;
+}
+.frame-modal__img-box {
+    width: 100%;
+}
+.frame-modal__img-box img {
+    max-width: 100%;
+}
+
+.frame-modal__content header {
+    padding: 10px;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px 4px 0 0;
+    color: #333;
+}
+
+@media screen and (max-width: 735px) {
+    .frame-modal {
+        width: 100%;
+    }
+    .frame-modal__close{
+        position: absolute;
+        color: grey;
+        width: auto;
+        height: auto;
+        font-size: 43px;
+        padding: 16px;
+        top: 0;
+        right: 6px;
+        line-height: 26px;
+    }
+    .frame-modal-box {
+        width: 100%;
+        border-radius: 0;
+        max-width: initial;
+        position: fixed;
+        top: 0;
+    }
+    .frame-modal__content header span {
+        display: block;
+        max-width: 85%;
+    }
+
+    /*if modal is bigger then the screen - ability to scroll the content*/
+    .frame-modal__overflow {
+        padding-top: 0;
+    }
+    .frame-modal__overflow .frame-modal-box {
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .frame-modal__overflow .frame-modal__content {
+        height: 100%;
+        box-sizing: border-box;
+        overflow: scroll;
+        padding: 0;
+    }
+
+}
